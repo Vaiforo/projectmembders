@@ -1,0 +1,28 @@
+{% extends 'project_members/base.html' %} {% block content %}
+<h1>{{ title }}</h1>
+<div class="container">
+	<form
+		action="{% url 'createpcard' %}"
+		method="post"
+		enctype="multipart/form-data"
+		class="col-sm-6"
+	>
+		{% csrf_token %}
+		<div class="mb-3">
+			<label for="titleInput" class="form-label">Заголовок каточки</label>
+			{{ form.title }}
+		</div>
+		<div class="mb-3">
+			<label for="contetntTextarea" class="form-label">Описание</label>
+			{{ form.content }}
+		</div>
+		<div class="mb-3 form-check">
+			{{ form.is_published }}
+			<label class="form-check-label" for="isPublishedCheckbox"
+				>Опубликовать</label
+			>
+		</div>
+		<button type="submit" class="btn btn-primary cardbtn">Создать</button>
+	</form>
+</div>
+{% endblock %}
