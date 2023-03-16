@@ -1,73 +1,91 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+
+from .forms import *
 from .models import *
 
 menu = [
-    {'title': "Home page", 'url_name': 'home'},
-    {'title': "About us", 'url_name': 'about'},
-    {'title': "Add page", 'url_name': 'add_page'},
-    {'title': 'contact', 'url_name': 'contact'},
-    {'title': "login", 'url_name': 'login'}
+    {'title': "PM-Projects", 'url_name': 'projects'},
+    # {'title': "PM-Hackathons", 'url_name': 'hackathons'},
+    {'title': "PM-CreatePCard", 'url_name': 'createpcard'},
+    # {'title': "PM-CreateHCard", 'url_name': 'createhcard'},
+    # {'title': "PM-Registration", 'url_name': 'registration'},
+    # {'title': 'PM-Authorization', 'url_name': 'authorization'},
 ]
 
 
-def index(request):
-    posts = Members.objects.all()
-    cats = Category.objects.all()
+def projects(request):
     context = {
-        'title': 'Home page',
-        'posts': posts,
-        'menu': menu,
-        'cats': cats,
-    }
-    return render(request, 'project_members/index.html', context=context)
-
-
-def about(request):
-    context = {
-        'title': 'Home page',
         'menu': menu,
     }
-    return render(request, 'project_members/about.html', context=context)
+    return render(request, 'project_members/projects.html', context=context)
 
 
-def addpage(request):
-    return render(request, 'project_members/addpage.html', {'title': 'Add page', 'menu': menu})
+# def hackathons(request):
+#     context = {
+#         'menu': menu,
+#     }
+#     return render(request, 'project_members/hackathons.html', context=context)
 
 
-def contact(request):
-    # return render(request, 'project_members/contact.html', {'title': 'Contact page', 'menu': menu})
-    return HttpResponse('contact page')
-
-
-def login(request):
-    # return render(request, 'project_members/login.html', {'title': 'Login page','menu': menu})
-    return HttpResponse('login')
-
-
-def post(request, post_id):
-    post = Members.objects.get(id=int(post_id))
+def createpcard(request):
+    # if request.method == 'POST':
+    #     form = AddPostForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('home')
+    # else:
+    #     form = AddPostForm()
     context = {
-        'title': 'Post',
         'menu': menu,
-        'post': post,
+        # 'form': form,
     }
-    return render(request, 'project_members/post.html', context=context)
+    return render(request, 'project_members/createpcard.html', context=context)
 
 
-def show_category(request, cat_id):
-    posts = Members.objects.filter(cat_id=int(cat_id))
-    cats = Category.objects.all()
-    if len(posts) == 0:
-        raise Http404()
-    context = {
-        'title': 'Category',
-        'menu': menu,
-        'posts': posts,
-        'cats': cats,
-        'cat_selected': cat_id,
-    }
-    return render(request, 'project_members/category.html', context=context)
+# def createhcard(request):
+    # if request.method == 'POST':
+    #     form = AddPostForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('home')
+    # else:
+    #     form = AddPostForm()
+    # context = {
+    #     'menu': menu,
+    #     'form': form,
+    # }
+    # return render(request, 'project_members/createhcard.html', context=context)
+
+
+# def registration(request):
+    # if request.method == 'POST':
+    #     form = AddPostForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('home')
+    # else:
+    #     form = AddPostForm()
+    # context = {
+    #     'menu': menu,
+    #     'form': form,
+    # }
+    # return render(request, 'project_members/registration.html', context=context)
+
+
+# def authorization(request):
+    # if request.method == 'POST':
+    #     form = AddPostForm(request.POST, request.FILES)
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect('home')
+    # else:
+    #     form = AddPostForm()
+    # context = {
+    #     'menu': menu,
+        # 'form': form,
+    # }
+    # return render(request, 'project_members/authorization.html', context=context)
 
 
 def pageNotFound(request, exception):
