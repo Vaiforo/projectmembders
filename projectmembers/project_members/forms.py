@@ -7,17 +7,22 @@ from .models import *
 class AddCardForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['cat'].empty_label = 'Cat not allowed'
+        # self.fields['cat'].empty_label = 'Cat not allowed'
 
     class Meta:
         model = Card
         fields = '__all__'
         widgets = {
-            'content': forms.Textarea(attrs={'cols': 50, 'rows': 10}),
+            'title': forms.TextInput(
+                attrs={'id': 'titleInput', 'class': 'form-control', 'type': 'text'}),
+            'content': forms.Textarea(
+                attrs={'id': 'contetntTextarea', 'class': 'form-control'}),
+            'is_published': forms.CheckboxInput(
+                attrs={'id': 'isPublishedCheckbox', 'class': 'form-check-input', 'type': 'checkbox'}),
         }
 
-    def clean_title(self):
-        title = self.cleaned_data['title']
-        if len(title) > 50:
-            raise ValidationError('Заголовок слишком длинный')
-        return title
+        def clean_title(self):
+            title = self.cleaned_data['title']
+            if len(title) > 50:
+                raise ValidationError('Заголовок слишком длинный')
+            return title

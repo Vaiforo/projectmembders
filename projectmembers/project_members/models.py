@@ -14,7 +14,7 @@ class Card(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('card', kwargs={'card_id': self.pk})
+        return reverse('pcard', kwargs={'pcard_id': self.pk})
 
     class Meta:
         verbose_name = 'Card'

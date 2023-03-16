@@ -1,6 +1,5 @@
 * {
 	font-family: Arial;
-	font-size: 20pt;
 }
 
 body {
@@ -11,5 +10,134 @@ h1,
 h2,
 h3,
 h4 {
-	color: rgb(62, 62, 62);
+	color: rgb(155, 155, 155);
+}
+
+.mainh1 {
+	letter-spacing: 2px;
+	text-shadow: 0 0 1px gray;
+}
+
+.logotext {
+	color: rgb(129, 43, 161) !important;
+	font-size: 20pt !important;
+	letter-spacing: 3px;
+	border: 3px solid rgb(118, 52, 124);
+	padding: 5px;
+	border-radius: 30px;
+	box-shadow: 5px 1px 10px rgb(70, 42, 65), -5px 1px 10px rgb(70, 42, 65);
+
+	transition: 0.5s all;
+}
+
+.logotext:hover {
+	box-shadow: 5px 1px 10px rgb(104, 63, 97), -5px 1px 10px rgb(134, 84, 124);
+
+	transition: 1s all;
+}
+
+.P {
+	color: rgb(95, 49, 164);
+}
+
+.menuitem {
+	color: rgb(178, 140, 186) !important;
+	font-size: 13pt;
+
+	transition: 0.5s all;
+}
+
+.menuitem:hover {
+	text-decoration: underline !important;
+	text-shadow: 1px 0 1px rgb(146, 94, 137), -1px 0 1px rgb(146, 94, 137);
+
+	transition: 0.5s all;
+}
+
+.carditem {
+	background-color: rgb(104, 104, 104) !important;
+	border: 3px solid rgb(104, 58, 105) !important;
+	border-radius: 6px !important;
+	box-shadow: 0 0 5px rgb(116, 65, 117), 0 0 10px rgb(130, 73, 131);
+}
+
+.cardbtn {
+	background-color: rgb(84, 36, 129) !important;
+	border: 0 !important;
+	box-shadow: 0 0 3px rgb(84, 36, 129) !important;
+
+	transition: 1s all;
+}
+
+.cardbtn:hover {
+	background-color: rgb(103, 46, 156) !important;
+	border: 0 !important;
+	box-shadow: 0 0 5px rgb(112, 49, 172) !important;
+	color: rgb(190, 190, 190) !important;
+
+	transition: 0.7s all;
+}
+
+h5 {
+	color: rgb(213, 212, 212) !important;
+	text-shadow: 0 0 10px rgb(29, 29, 29);
+	font-weight: bold !important;
+}
+
+.loginbtn {
+	background-color: rgb(112, 49, 171) !important;
+	border: 0 !important;
+	box-shadow: 0 0 3px rgb(84, 36, 129) !important;
+
+	transition: 1s all;
+}
+
+.loginbtn:hover {
+	background-color: rgb(134, 60, 202) !important;
+	border: 0 !important;
+	box-shadow: 0 0 5px rgb(112, 49, 172) !important;
+	color: rgb(190, 190, 190) !important;
+
+	transition: 0.7s all;
+}
+
+.regbtn {
+	background-color: rgb(81, 36, 123) !important;
+	border: 0 !important;
+	box-shadow: 0 0 3px rgb(84, 36, 129) !important;
+
+	transition: 1s all;
+}
+
+.regbtn:hover {
+	background-color: rgb(104, 47, 158) !important;
+	border: 0 !important;
+	box-shadow: 0 0 5px rgb(112, 49, 172) !important;
+	color: rgb(190, 190, 190) !important;
+
+	transition: 0.7s all;
+}
+
+.form-label,
+.form-check-label {
+	color: antiquewhite !important;
+}
+
+.cardp {
+	color: antiquewhite !important;
+	font-size: 15pt;
+}
+
+.cardbg {
+	background-color: rgb(47, 47, 47) !important;
+	border: 0 !important;
+	box-shadow: 0 0 5px rgb(47, 47, 47), 0 0 10px rgb(47, 47, 47),
+		0 0 20px rgb(47, 47, 47), 0 0 30px rgb(47, 47, 47);
+	border-radius: 10px !important;
+}
+
+.cardtext {
+	background-color: rgb(70, 70, 70) !important;
+	border: 2px solid !important;
+	border-radius: 5px !important;
 }
