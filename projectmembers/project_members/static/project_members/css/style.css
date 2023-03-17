@@ -59,6 +59,7 @@ h4 {
 	border: 3px solid rgb(104, 58, 105) !important;
 	border-radius: 6px !important;
 	box-shadow: 0 0 5px rgb(116, 65, 117), 0 0 10px rgb(130, 73, 131);
+	min-height: 250px;
 }
 
 .cardbtn {
