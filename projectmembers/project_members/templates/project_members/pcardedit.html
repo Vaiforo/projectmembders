@@ -1,0 +1,23 @@
+{% extends 'project_members/base.html' %} {% block content %}
+<div class="container col-sm-5 mt-3">
+	<h1 align="center">Редактирование карточки</h1>
+	{{ p }}
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="mb-3">
+			<label for="nameInput" class="form-label">{{ form.title.label }}</label>
+			{{ form.title }}
+			{{ form.title.errors}}
+		</div>
+		<div class="mb-3">
+			<label for="aboutInput" class="form-label"
+				>{{ form.content.label }}</label
+			>
+			{{ form.content }}
+			{{ form.content.errors}}
+		</div>
+		<div class="form-errors">{{ form.non_field_errors }}</div>
+		<button type="submit" class="btn btn-primary crbtn mt-3">Изменить</button>
+	</form>
+</div>
+{% endblock %}

@@ -13,6 +13,10 @@ h4 {
 	color: rgb(155, 155, 155);
 }
 
+footer {
+	height: 100px;
+}
+
 .mainh1 {
 	letter-spacing: 2px;
 	text-shadow: 0 0 1px gray;
@@ -59,15 +63,48 @@ h4 {
 	border: 3px solid rgb(104, 58, 105) !important;
 	border-radius: 6px !important;
 	box-shadow: 0 0 5px rgb(116, 65, 117), 0 0 10px rgb(130, 73, 131);
-	min-height: 250px;
+	height: 300px;
 }
 
-.cardbtn {
+.crbtn {
 	background-color: rgb(84, 36, 129) !important;
 	border: 0 !important;
 	box-shadow: 0 0 3px rgb(84, 36, 129) !important;
 
+	transition: 1s all !important;
+}
+
+.crbtn:hover {
+	background-color: rgb(103, 46, 156) !important;
+	border: 0 !important;
+	box-shadow: 0 0 5px rgb(112, 49, 172) !important;
+	color: rgb(190, 190, 190) !important;
+
+	transition: 0.7s all;
+}
+
+.pbtn {
+	background-color: rgb(84, 36, 129) !important;
+	border: 0 !important;
+	box-shadow: 0 0 3px rgb(84, 36, 129) !important;
+	position: absolute;
+	bottom: 0;
+
 	transition: 1s all;
+}
+
+.pbtn:hover {
+	background-color: rgb(103, 46, 156) !important;
+	border: 0 !important;
+	box-shadow: 0 0 5px rgb(112, 49, 172) !important;
+	color: rgb(190, 190, 190) !important;
+
+	transition: 0.7s all;
+}
+
+.cardbtn {
+	position: absolute;
+	bottom: 0;
 }
 
 .cardbtn:hover {
@@ -141,4 +178,91 @@ h5 {
 	background-color: rgb(70, 70, 70) !important;
 	border: 2px solid !important;
 	border-radius: 5px !important;
+}
+
+.cardtime {
+	color: rgb(145, 145, 145);
+}
+
+.header-name {
+	text-decoration: none;
+	color: rgb(114, 67, 150) !important;
+	font-size: 17pt !important;
+	text-shadow: 0 0 1px rgb(114, 67, 150);
+	text-shadow: 0 0 5px rgb(84, 56, 104);
+	border: 2px solid;
+	box-shadow: 0 0 3px rgb(99, 50, 148);
+	box-shadow: 0 0 7px rgb(69, 36, 103);
+	border-radius: 5px;
+
+	background-color: #212529 !important;
+
+	transition: 0.5s all;
+}
+
+.header-name:hover {
+	color: rgb(131, 77, 173) !important;
+	text-shadow: 0 0 1px rgb(131, 77, 173);
+	text-shadow: 0 0 5px rgb(82, 48, 107);
+	box-shadow: 0 0 5px rgb(116, 59, 172);
+	box-shadow: 0 0 10px rgb(91, 47, 134);
+	box-shadow: 0 0 13px rgb(69, 36, 103);
+	border-radius: 6px;
+
+	transition: 0.5s all;
+}
+
+.h1-nick {
+	font-size: 40pt;
+}
+
+.pencil {
+	text-decoration: none;
+	color: blueviolet;
+	font-size: 17pt;
+}
+
+.singout {
+	text-decoration: none;
+	color: rgb(139, 0, 0);
+	font-size: 12pt;
+
+	transition: 0.2s all;
+}
+
+.singout:hover {
+	color: rgb(164, 0, 0);
+
+	transition: 0.2s all;
+}
+
+.tg {
+	transition: 0.3s all;
+}
+
+.tg:hover {
+	box-shadow: 0 0 10px #0088cc;
+	border-radius: 100px;
+
+	transition: 0.3s all;
+}
+
+.redstar {
+	color: red;
+	font-size: 10pt;
+}
+
+.toprofile {
+	text-decoration: none;
+	color: rgb(145, 145, 145);
+	text-shadow: 0 0 1px rgb(145, 145, 145);
+
+	transition: 0.4s all;
+}
+
+.toprofile:hover {
+	color: rgb(160, 160, 160);
+	text-shadow: 0 0 2px rgb(160, 160, 160);
+
+	transition: 0.4s all;
 }

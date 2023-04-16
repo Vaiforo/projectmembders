@@ -1,6 +1,18 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 
+from .forms import RegisterUserForm
 from .models import *
+
+
+class PMUserAdmin(UserAdmin):
+    add_form = RegisterUserForm
+    model = PMUser
+    list_display = ['email', 'username', 'warns', 'banned']
+    list_editable = ('banned',)
+
+
+admin.site.register(PMUser, PMUserAdmin)
 
 
 class CardAdmin(admin.ModelAdmin):

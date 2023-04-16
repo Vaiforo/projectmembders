@@ -1,0 +1,22 @@
+{% extends 'project_members/base.html' %} {% block content %}
+<div class="container col-sm-5 mt-3">
+	<h1 align="center">Вход</h1>
+	<form action="{% url 'login' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="mb-3">
+			<label for="emailInput" class="form-label">{{ form.username.label }}</label>
+			{{ form.username }}
+			{{ form.username.errors}}
+		</div>
+		<div class="mb-3">
+			<label for="passwordInput" class="form-label"
+				>{{ form.password.label }}</label
+			>
+			{{ form.password }}
+			{{ form.password.errors}}
+		</div>
+		<div class="form-errors">{{ form.non_field_errors }}</div>
+		<button type="submit" class="btn btn-primary crbtn mt-3">Вход</button>
+	</form>
+</div>
+{% endblock %}

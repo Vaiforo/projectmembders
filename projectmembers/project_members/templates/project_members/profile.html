@@ -1,12 +1,15 @@
 {% extends 'project_members/base.html' %} {% block content %}
-<div class="container cardbg mt-4 px-4 pb-4 col-sm-9">
-	<div class="row cardtext pt-3">
+<div class="container profile cardbg mt-4 px-4 pb-4 col-sm-9">
+	<nav class="navbar">
+		<h1 class="h1-nick"><b>{{ profile.username }}</b></h1>
+		{% if profile.pk == user.pk %}
+		<a href="{{ user.get_edit_absolute_url }}" class="pencil">🖍</a>
+		{% endif %}
+	</nav>
+	<div class="cardp">{{ profile.about | linebreaks }}</div>
+	<div class="my-5">
 		<nav class="navbar">
-			<h2>
-				<a href="{{ profile.get_absolute_url }}" class="toprofile"
-					><b>{{ profile.username }}</b></a
-				>
-			</h2>
+			{% if profile.tg %}
 			<a href="{{ profile.tg }}">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -21,15 +24,11 @@
 					/>
 				</svg>
 			</a>
-		</nav>
-		<nav class="navbar">
-			<h1 class="mainh1"><b>{{ card.title }}</b></h1>
-			{% if profile.pk == user.pk %}
-			<a href="{{ card.get_edit_absolute_url }}" class="pencil">🖍</a>
 			{% endif %}
 		</nav>
-		<p class="cardtime">{{ card.get_time }}</p>
-		<div class="cardp">{{ card.content | linebreaks }}</div>
 	</div>
+	{% if profile.pk == user.pk %}
+	<a href="{% url 'logout' %}" class="singout">Sing out</a>
+	{% endif %}
 </div>
 {% endblock %}

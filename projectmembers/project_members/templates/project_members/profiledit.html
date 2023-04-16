@@ -1,0 +1,37 @@
+{% extends 'project_members/base.html' %} {% block content %}
+<div class="container col-sm-5 mt-3">
+	<h1 align="center">Редактирование профиля</h1>
+	{{ p }}
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="mb-3">
+			<label for="nameInput" class="form-label">{{ form.username.label }}</label>
+			{{ form.username }}
+			{{ form.username.errors}}
+		</div>
+		<div class="mb-3">
+			<label for="aboutInput" class="form-label"
+				>{{ form.about.label }}</label
+			>
+			{{ form.about }}
+			{{ form.about.errors}}
+		</div>
+		<div class="mb-3">
+			<label for="tgInput" class="form-label"
+				>{{ form.tg.label }}</label
+			><font class="redstar">* (или Vk)</font>
+			{{ form.tg }}
+			{{ form.tg.errors}}
+		</div>
+		<div class="mb-3">
+			<label for="vkInput" class="form-label"
+				>{{ form.vk.label }}</label
+			><font class="redstar">* (или Telegram)</font>
+			{{ form.vk }}
+			{{ form.vk.errors}}
+		</div>
+		<div class="form-errors">{{ form.non_field_errors }}</div>
+		<button type="submit" class="btn btn-primary crbtn mt-3">Изменить</button>
+	</form>
+</div>
+{% endblock %}

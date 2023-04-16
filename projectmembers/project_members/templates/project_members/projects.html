@@ -1,18 +1,23 @@
 {% extends 'project_members/base.html' %} {% block content %}
-<h1 align="center" class="mainh1 mt-3"><b>Поиск команды для проекта</b></h1>
-<div class="row">
-	{% for card in cards %}
-	<div class="col-sm-3 py-3">
-		<div class="card card carditem">
-			<div class="card-body">
-				<h5 class="card-title">{{ card.title }}</h5>
-				<p class="card-text">{{ card.content }}</p>
-				<a href="{{ card.get_absolute_url }}" class="btn btn-primary cardbtn"
-					>Просмотреть</a
-				>
+<div class="container">
+	<h1 align="center" class="mainh1 mt-3"><b>Поиск команды для проекта</b></h1>
+	<div class="row">
+		{% for card in cards %}
+		<div class="col-lg-3 col-md-4 col-sm-6 py-3">
+			<div class="card carditem">
+				<div class="card-body">
+					<h5 class="card-title">{{ card.title }}</h5>
+					<p class="card-text">{{ card.content | truncatechars:70 }}</p>
+					<p class="cardtime">{{ card.get_time }}</p>
+					<a
+						href="{{ card.get_absolute_url }}"
+						class="btn btn-primary pbtn mb-3"
+						>Просмотреть</a
+					>
+				</div>
 			</div>
 		</div>
+		{% endfor %}
 	</div>
-	{% endfor %}
 </div>
 {% endblock %}

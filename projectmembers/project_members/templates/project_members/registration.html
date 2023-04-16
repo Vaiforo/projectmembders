@@ -1,0 +1,41 @@
+{% extends 'project_members/base.html' %} {% block content %}
+<div class="container col-sm-5 mt-3">
+	<h1 align="center">Регистрация</h1>
+	<form
+		action="{% url 'registration' %}"
+		method="post"
+		enctype="multipart/form-data"
+	>
+		{% csrf_token %}
+		<div class="mb-3">
+			<label for="nameInput" class="form-label"
+				>{{ form.username.label }}</label
+			>
+			{{ form.username }}
+			<!-- {{ form.username.errors }} -->
+		</div>
+		<div class="mb-3">
+			<label for="emailInput" class="form-label">{{ form.email.label }}</label>
+			{{ form.email }}
+			<!-- {{ form.email.errors }} -->
+		</div>
+		<div class="mb-3">
+			<label for="passwordInput1" class="form-label"
+				>{{ form.password1.label }}</label
+			>
+			{{ form.password1 }}
+			<!-- {{ form.password1.errors }} -->
+		</div>
+		<div class="mb-3">
+			<label for="passwordInput2" class="form-label"
+				>{{ form.password2.label }}</label
+			>
+			{{ form.password2 }}
+			<!-- {{ form.password2.errors }} -->
+		</div>
+		<button type="submit" class="btn btn-primary crbtn mt-3">
+			Регистрация
+		</button>
+	</form>
+</div>
+{% endblock %}
